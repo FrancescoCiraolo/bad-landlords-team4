@@ -1,0 +1,17 @@
+#search-by-owner .body-1,
+#search-by-owner .body-2,
+#search-by-owner .body-3 {
+    display: none;
+}
+
+#search-by-owner.ready .body-1 {
+    display: block;
+}
+
+#search-by-owner.suggestions .body-2 {
+    display: block;
+}
+
+#search-by-owner.chosen .body-3 {
+    display: block;
+}
