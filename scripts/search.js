@@ -81,8 +81,8 @@ class SearchState {
         await this.suggest_owners(null);
         this.#owner_search_card.addClass('chosen');
         $('#owner_name').text(name[0].values[0])
-        $('#buildings tbody').append(buildings.map(this.#build_building_row))
-        $('#violations tbody').append(violations.map(this.#build_violation_row))
+        $('#buildings tbody').empty().append(buildings.map(this.#build_building_row))
+        $('#violations tbody').empty().append(violations.map(this.#build_violation_row))
     }
 
     #create_suggestion_row(item_id, item_name) {
@@ -116,95 +116,6 @@ class SearchState {
 }
 
 let state = new SearchState();
-
-// state.db = null;
-
-// let db;
-
-// let owner_search_card;
-// let owner_input;
-// let owners;
-//
-// let owner;
-
-// function chose_owner(owner_id) {
-//     let name = db.exec(`SELECT name FROM owners WHERE id = ${owner_id}`)
-//
-//     if (name.length === 0)
-//         return;
-//
-//     $('#owner_name').text(name[0].values[0])
-//
-//     let buildings = db.exec(`
-//         SELECT b.id, b.address, count(v.id) AS c
-//             FROM violations AS v
-//             LEFT JOIN buildings AS b
-//                 ON b.id = v.building_id
-//             WHERE v.owner_id = ${owner_id}
-//             GROUP BY v.building_id`)
-//
-//     let violations = db.exec(`
-//         SELECT v.id, v.type, v.description, b.address
-//             FROM violations AS v
-//             LEFT JOIN buildings AS b
-//                 ON b.id = v.building_id
-//             WHERE v.owner_id = = ${owner_id};`)
-// }
-
-// function create_suggestion_row(item_id, item_name) {
-//     let el = $("<a></a>")
-//
-//     el.href = '#'
-//     el.text(item_name)
-//     el.addClass('list-group-item')
-//     el.addClass('list-group-item-action')
-//     el.on('click', item_id, function (event) {
-//         console.log(event.data)
-//     })
-//
-//     return el
-// }
-
-// async function show_suggestions(val) {
-//     let suggestions_list;
-//     let shown_size;
-//
-//     suggestions_list = [];
-//     owners.empty();
-//     owner_search_card.addClass('suggestions');
-//
-//     if (val.length > 0) {
-//         let res = db.exec(`SELECT * FROM owners WHERE name LIKE "%${val}%"`)
-//         if (res.length > 0)
-//             suggestions_list = db.exec(`SELECT * FROM owners WHERE name LIKE "%${val}%"`)[0].values;
-//     }
-//
-//     shown_size = Math.min(suggestions_list.length, MAX_RESULTS);
-//
-//     $('#owner_suggestions_state').text(`Shown ${shown_size} owners (of ${suggestions_list.length})`)
-//
-//     for (let i = 0; i < shown_size; i++) {
-//         let el = create_suggestion_row(suggestions_list[i][0], suggestions_list[i][1])
-//         owners.append(el)
-//     }
-// }
-
-// function typing_handler() {
-//     let val = owner_input.val();
-//
-//     show_suggestions(val).then()
-// }
-
-// function init(loaded_db) {
-//     db = loaded_db;
-//
-//     owner_input.val('')
-//     owner_input.on("input", typing_handler).focus()
-//     owner_search_card.addClass('ready');
-//
-//     show_suggestions('m').then()
-//     chose_owner(109);
-// }
 
 $(document).ready(function() {
 
