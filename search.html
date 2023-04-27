@@ -43,68 +43,86 @@
       </div>
     </header>
 
+    <div class="m-5 row">
+
+      <div class="col-5">
+        <p>This page utilizes the RentSmart dataset and takes into account Housing and Building Violation categories exclusively. Housing Violations correspond to the MA State Sanitary Code (105 CMR 410), while Building Violations correspond to State Building Code (780 CMR) and the State Fire Code (527 CMR).</p>
+
+        <p>The following list contains owner names with 6 or more violations, otherwise referred to as scofflaw landlords.</p>
+
+        <p>Use the search bar below to look up a landlord or property owner by name and view their violations and properties those violations are associated with. </p>
+
+        <img src="imgs/scofflaw_search.png" style="width: 100%" alt="">
+      </div>
+      <div class="col-7">
+        <div id="search-by-owner" class="card">
+          <div class="card-header">
+            Search by owner
+          </div>
+          <div class="card-body body-1">
+            <form action="#">
+              <div class="grid text-center">
+                <div class="g-col-2"><label for="owner_input">Owner name</label></div>
+                <div class="g-col-4"><input type="text" name="owner" id="owner_input"></div>
+              </div>
+            </form>
+          </div>
+
+          <div class="card-body body-2 align-content-center container-md" id="owner_suggestions">
+            <div class="state p-2" id="owner_suggestions_state">Nothing found</div>
+
+            <div class="list-group p-2" id="owners_list">
+            </div>
+
+          </div>
+
+          <div class="card-body body-3">
+            <h3 id="owner_name">Mario Rossi</h3>
+
+            <h5 class="mt-5">Buildings</h5>
+
+            <table class="table table-striped" id="buildings">
+              <thead>
+              <tr>
+                <th scope="col" class="col-1">#</th>
+                <th scope="col" class="col-8">Address</th>
+                <th scope="col" class="col-3">Violations</th>
+              </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+
+            <h5 class="mt-5">Violations</h5>
+
+            <div class="">
+              <table class="table table-striped" id="violations">
+                <thead>
+                <tr>
+                  <th scope="col" class="col-1">#</th>
+                  <th scope="col" class="col-2">Type</th>
+                  <th scope="col" class="col-6">Description</th>
+                  <th scope="col" class="col-3">Building address</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        </div>
+    </div>
+
     <div class="text-danger bg-warning border border-3 border-danger m-5 p-2 d-none" id="error">
 
     </div>
 
-    <div id="search-by-owner" class="card">
-      <div class="card-header">
-        Search by owner
-      </div>
-      <div class="card-body body-1">
-        <form action="#">
-          <div class="grid text-center">
-            <div class="g-col-2"><label for="owner_input">Owner name</label></div>
-            <div class="g-col-4"><input type="text" name="owner" id="owner_input"></div>
-          </div>
-        </form>
-      </div>
 
-      <div class="card-body body-2 align-content-center container-md" id="owner_suggestions">
-        <div class="state p-2" id="owner_suggestions_state">Nothing found</div>
-
-        <div class="list-group p-2" id="owners_list">
-        </div>
-
-      </div>
-
-      <div class="card-body body-3">
-        <h3 id="owner_name">Mario Rossi</h3>
-
-        <h5 class="mt-5">Buildings</h5>
-
-        <table class="table table-striped" id="buildings">
-          <thead>
-            <tr>
-              <th scope="col" class="col-1">#</th>
-              <th scope="col" class="col-8">Address</th>
-              <th scope="col" class="col-3">Violations</th>
-            </tr>
-          </thead>
-          <tbody>
-
-          </tbody>
-        </table>
-
-        <h5 class="mt-5">Violations</h5>
-
-        <div class="">
-          <table class="table table-striped" id="violations">
-            <thead>
-              <tr>
-                <th scope="col" class="col-1">#</th>
-                <th scope="col" class="col-2">Type</th>
-                <th scope="col" class="col-6">Description</th>
-                <th scope="col" class="col-3">Building address</th>
-              </tr>
-            </thead>
-            <tbody>
-
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
   </div>
 </body>
 </html>
